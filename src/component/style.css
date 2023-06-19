@@ -1,0 +1,50 @@
+/* 
+
+
+
+
+.currentDateTime{
+    display:flex;
+    flex-direction:column;
+}
+.currentTemp{
+    position:absolute;
+    left:343px;
+}
+.tempapp{
+    position:absolute;
+    top:30%;
+    left:60.%;
+    width: 33%;
+    border: 2px solid black;
+    height: 385px;
+    background-color: black;
+} */
+
+.body{
+    display: flex;
+    position: absolute;
+    top: 293px;
+    left: 586px;
+   
+}
+.currentLocation{
+    display:flex;
+    justify-content:flex-end;
+}
+
+.currentDetails{  
+    position: absolute;
+    top: 324px;
+    left: 16px;
+    display: flex;
+}
+
+.currentLocationTemp{
+    width: 300px;
+    border: 2px solid black;
+    height: 385px;
+    /* position:absolute;
+    top:30%;
+    left:27%; */
+}
