@@ -6,6 +6,7 @@ import Clock from "react-live-clock";
 import moment from "moment";
 import "./style.css";
 import Forecast from "../component/Forecast.js";
+import image from "../image/rightside-image.jpg";
 
 const Api_endpoint = `https://api.openweathermap.org/data/2.5/weather?`;
 const Api_keys = `92927e1709a9a99846c75f5225870fb1`;
@@ -42,22 +43,29 @@ function Tempapp() {
 
   return (
     <div className="body">
-      <div className="currentLocationTemp">
-        <div className="currentLocation">
-          <p>{responsedata.name}</p>
-        </div>
-        <div className="currentDetails">
-          <div className="currentDateTime">
-            <strong>{moment().format("Do MMM YY ")}</strong>
-            <Clock format="HH:mm:ss" interval={1000} ticking={true} />
+      <div className="container">
+        <div className="currentLocationTemp">
+          <div className="currentDetails">
+            <div className="currentDateTime">
+              <Clock format="HH:mm:ss" interval={1000} ticking={true} />
+              <strong>{moment().format("dddd, Do MMM YYYY ")}</strong>
+              <div className="currentTemp">
+                <span>{Math.round(responsedata.main.temp - 273)}&deg;C</span>
+                {/* <span>{responsedata.temp-273}&deg;C</span> */}
+              </div>
+            </div>
+
           </div>
-          <div className="currentTemp">
-            <span>{Math.round(responsedata.main.temp - 273)}</span>
+          <div className="currentLocation">
+            <p>{responsedata.name}</p>
+            <span>{responsedata.sys.country}</span>
+
           </div>
+
         </div>
-      </div>
-      <div>
-        <Forecast />
+        <div className="forecast">
+          <Forecast />
+        </div>
       </div>
     </div>
   );
